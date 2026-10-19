@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://cob1gycn6y4fx"]
+
+[ext_resource type="PackedScene" uid="uid://d2menu0va7vcd" path="res://Scenes/knight.tscn" id="1_jjgbg"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_poppt"]
+size = Vector3(60, 2, 60)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_poppt"]
+size = Vector3(60, 2, 60)
+
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_i1ar7"]
+
+[sub_resource type="Sky" id="Sky_wf1jm"]
+sky_material = SubResource("PhysicalSkyMaterial_i1ar7")
+
+[sub_resource type="Environment" id="Environment_poppt"]
+background_mode = 2
+sky = SubResource("Sky_wf1jm")
+
+[node name="Main" type="Node" unique_id=555462657]
+
+[node name="Knight" parent="." unique_id=1614068770 instance=ExtResource("1_jjgbg")]
+
+[node name="world" type="Node3D" parent="." unique_id=487182683]
+
+[node name="Ground" type="StaticBody3D" parent="world" unique_id=181557708]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/Ground" unique_id=1698473921]
+mesh = SubResource("BoxMesh_poppt")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="world/Ground" unique_id=184331077]
+shape = SubResource("BoxShape3D_poppt")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="world" unique_id=1794132267]
+transform = Transform3D(1, 0, 0, 0, 0.0019472649, 0.99999815, 0, -0.99999815, 0.0019472649, 0, 10.400496, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="world" unique_id=1634747922]
+environment = SubResource("Environment_poppt")
