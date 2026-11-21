@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://cck552oyu81im"]
+
+[ext_resource type="PackedScene" uid="uid://d2menu0va7vcd" path="res://Scenes/knight.tscn" id="1_v0iea"]
+[ext_resource type="Script" uid="uid://c7sam165kucws" path="res://Scripts/collision_shape_3d.gd" id="2_cvnsp"]
+[ext_resource type="Script" uid="uid://dguodjdvgvcsi" path="res://Scripts/camera_position_target.gd" id="3_6t5aa"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_poppt"]
+radius = 0.2631836
+height = 1.2193604
+
+[node name="Player" type="CharacterBody3D" unique_id=1350451804]
+script = ExtResource("2_cvnsp")
+
+[node name="Knight" parent="." unique_id=1614068770 instance=ExtResource("1_v0iea")]
+transform = Transform3D(-0.5, 0, 4.371139e-08, 0, 0.5, 0, -4.371139e-08, 0, -0.5, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=653240825]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.57598877, 0)
+shape = SubResource("CapsuleShape3D_poppt")
+
+[node name="CameraPositionTarget" type="Node3D" parent="." unique_id=958412978]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.534544, 3.1899242)
+script = ExtResource("3_6t5aa")

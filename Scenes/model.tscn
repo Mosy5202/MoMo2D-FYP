@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://b4qnw7c0vux5l"]
+
+[ext_resource type="PackedScene" uid="uid://cym8mg7vui6lp" path="res://MeshExports/modelLevel.gltf" id="1_1yqok"]
+
+[node name="Models" unique_id=1074246001 instance=ExtResource("1_1yqok")]

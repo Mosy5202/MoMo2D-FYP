@@ -1,39 +1,27 @@
 [gd_scene format=3 uid="uid://cob1gycn6y4fx"]
 
-[ext_resource type="PackedScene" uid="uid://d2menu0va7vcd" path="res://Scenes/knight.tscn" id="1_jjgbg"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_poppt"]
-size = Vector3(60, 2, 60)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_poppt"]
-size = Vector3(60, 2, 60)
-
-[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_i1ar7"]
-
-[sub_resource type="Sky" id="Sky_wf1jm"]
-sky_material = SubResource("PhysicalSkyMaterial_i1ar7")
-
-[sub_resource type="Environment" id="Environment_poppt"]
-background_mode = 2
-sky = SubResource("Sky_wf1jm")
+[ext_resource type="PackedScene" uid="uid://cck552oyu81im" path="res://Scenes/player.tscn" id="1_jjgbg"]
+[ext_resource type="Script" uid="uid://dguodjdvgvcsi" path="res://Scripts/camera_position_target.gd" id="2_bo1nx"]
+[ext_resource type="Script" uid="uid://d22vpk41r72bc" path="res://Scripts/main_camera.gd" id="3_8gbba"]
+[ext_resource type="PackedScene" uid="uid://ch150abeioy0v" path="res://Scenes/level.tscn" id="4_jjvhh"]
 
 [node name="Main" type="Node" unique_id=555462657]
 
-[node name="Knight" parent="." unique_id=1614068770 instance=ExtResource("1_jjgbg")]
+[node name="MainCamera" type="Camera3D" parent="." unique_id=1290373023 node_paths=PackedStringArray("target")]
+transform = Transform3D(-0.0021894397, -0.33507365, 0.9421894, 0, 0.94219166, 0.33507445, -0.9999976, 0.0007336253, -0.0020628718, 17.117273, -2.714266, -12.50358)
+current = true
+script = ExtResource("3_8gbba")
+target = NodePath("../Level/Player/CameraPositionTarget2")
+lerp_speed = 0.1
 
-[node name="world" type="Node3D" parent="." unique_id=487182683]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=298508786]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 34.041733, 0)
 
-[node name="Ground" type="StaticBody3D" parent="world" unique_id=181557708]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+[node name="Level" parent="." unique_id=192726231 instance=ExtResource("4_jjvhh")]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="world/Ground" unique_id=1698473921]
-mesh = SubResource("BoxMesh_poppt")
+[node name="Player" parent="Level" unique_id=1350451804 instance=ExtResource("1_jjgbg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.319683, -5.347471, -12.907268)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="world/Ground" unique_id=184331077]
-shape = SubResource("BoxShape3D_poppt")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="world" unique_id=1794132267]
-transform = Transform3D(1, 0, 0, 0, 0.0019472649, 0.99999815, 0, -0.99999815, 0.0019472649, 0, 10.400496, 0)
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="world" unique_id=1634747922]
-environment = SubResource("Environment_poppt")
+[node name="CameraPositionTarget2" type="Node3D" parent="Level/Player" unique_id=1707137002]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.214221, 3.5741496, 0)
+script = ExtResource("2_bo1nx")

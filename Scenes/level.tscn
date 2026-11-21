@@ -1,0 +1,107 @@
+[gd_scene format=3 uid="uid://ch150abeioy0v"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_poppt"]
+albedo_color = Color(0, 0.6217488, 0.28945366, 1)
+
+[node name="Level" type="Node3D" unique_id=192726231]
+
+[node name="Room" type="CSGBox3D" parent="." unique_id=464348111]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.251463, -0.34768152, -16.609104)
+use_collision = true
+flip_faces = true
+size = Vector3(10, 10.022949, 10)
+
+[node name="Table" type="CSGCombiner3D" parent="." unique_id=600505896]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.251463, -0.15226007, -14.4029875)
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Table" unique_id=548723978]
+transform = Transform3D(0.051445678, 0, 0.99867576, 0, 1, 0, -0.99867576, 0, 0.051445678, 3.2964885, -4.681965, -1.7159214)
+size = Vector3(0.9613037, 0.044628907, 0.6002197)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Table" unique_id=1848751316]
+transform = Transform3D(0.051445678, 0, 0.99867576, 0, 1, 0, -0.99867576, 0, 0.051445678, 3.1266322, -4.955332, -2.075011)
+size = Vector3(0.1, 0.5, 0.05)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Table" unique_id=1507897202]
+transform = Transform3D(0.051445678, 0, 0.99867576, 0, 1, 0, -0.99867576, 0, 0.051445678, 3.4778903, -4.955332, -2.0569165)
+size = Vector3(0.1, 0.5, 0.05)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Table" unique_id=1909713212]
+transform = Transform3D(0.051445678, 0, 0.99867576, 0, 1, 0, -0.99867576, 0, 0.051445678, 3.4755847, -4.955332, -1.4094536)
+size = Vector3(0.1, 0.5, 0.05)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Table" unique_id=1947164660]
+transform = Transform3D(0.051445678, 0, 0.99867576, 0, 1, 0, -0.99867576, 0, 0.051445678, 3.0923588, -4.9577246, -1.4212184)
+size = Vector3(0.1, 0.5, 0.05)
+
+[node name="Bed" type="CSGCombiner3D" parent="." unique_id=1638698277]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 11.013699, 4.644991, -12.811773)
+use_collision = true
+
+[node name="Pillow" type="CSGCombiner3D" parent="Bed" unique_id=1771281203]
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="Bed/Pillow" unique_id=1448498823]
+transform = Transform3D(1, 0, 0, 0, 0.7, 0, 0, 0, 1, 3.644235, -4.6747527, -3.9470673)
+radius = 0.117243566
+
+[node name="CSGSphere3D4" type="CSGSphere3D" parent="Bed/Pillow" unique_id=1762798079]
+transform = Transform3D(1, 0, 0, 0, 0.7, 0, 0, 0, 1, 3.644235, -4.6747527, -3.757288)
+radius = 0.12761839
+
+[node name="CSGSphere3D5" type="CSGSphere3D" parent="Bed/Pillow" unique_id=1830552437]
+transform = Transform3D(1, 0, 0, 0, 0.7, 0, 0, 0, 1, 3.644235, -4.6747527, -3.57467)
+radius = 0.124719754
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Bed" unique_id=987992145]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3747842, -4.856519, -3.76018)
+size = Vector3(1, 0.2841797, 0.7225342)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Bed" unique_id=2036122347]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3677042, -4.6824884, -3.7601914)
+size = Vector3(0.8852539, 0.045166016, 0.5898361)
+
+[node name="BookShelf" type="CSGCombiner3D" parent="." unique_id=1283876867]
+transform = Transform3D(-0.090592936, 0, -1.9979472, 0, 2, 0, 1.9979472, 0, -0.090592936, 18.133, -4.35, -18.461)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="BookShelf" unique_id=1174712439]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13542151, -0.27993774, 0.24414086)
+size = Vector3(0.552948, 0.4401245, 0.51171875)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="BookShelf" unique_id=87798466]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13619328, -0.17152357, 0.27240038)
+operation = 2
+size = Vector3(0.47008896, 0.1568141, 0.4954834)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="BookShelf" unique_id=1220928165]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13619328, -0.37097025, 0.27240038)
+operation = 2
+size = Vector3(0.47008896, 0.17634535, 0.4954834)
+
+[node name="Lamp" type="CSGCombiner3D" parent="." unique_id=1785330334]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 17.59489, -4.423491, -14.7155905)
+use_collision = true
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Lamp" unique_id=1406589194]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0048775673, -0.353292, -0.028962255)
+radius = 0.18652344
+height = 0.2290802
+cone = true
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Lamp" unique_id=40835817]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0012578964, -0.0470047, -0.028962255)
+radius = 0.017089844
+height = 0.6572876
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Lamp" unique_id=209483615]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015146732, 0.24089289, -0.028962255)
+polygon = PackedVector2Array(0, 0, 0, 0.16939402, 0.047989845, 0.17135239, 0.15232563, -0.0010151863)
+mode = 1
+spin_degrees = 360.0
+spin_sides = 8
+
+[node name="Floor" type="CSGBox3D" parent="." unique_id=416048442]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.40277004, -5.9414043, -3.3048725)
+use_collision = true
+size = Vector3(40.620117, 1, 39.047974)
+material = SubResource("StandardMaterial3D_poppt")
